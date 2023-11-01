@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 
 # Default target dir
-target-directory="."
+prefixdir="."
 
 # Parse cli options
 while getops ":P:" flag
