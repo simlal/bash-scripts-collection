@@ -4,10 +4,10 @@
 target-directory="."
 
 # Parse cli options
-while getops ":t:" flag
+while getops ":P:" flag
 do 
     case "${flag}" in
-        t) target-dir=${OPTARG};;
+        P) prefix-dir=${OPTARG};;
     esac
 done
 
@@ -17,10 +17,10 @@ url=$1
 
 # Help msg when url not provided
 if [[ -z "$url" ]]; then
-    echo "Usage: wget-download-optimal.sh [-t target-directory] url"
+    echo "Usage: wget-download-optimal.sh [-P prefix-dir] url"
     exit 1
 else
     # Download file with optimisations for slow / unstable connections
-    wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 0 -P $target-dir $url
+    wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 0 -P $prefix-dir $url
     exit 0
 fi
