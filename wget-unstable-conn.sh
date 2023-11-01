@@ -7,7 +7,7 @@ target-directory="."
 while getops ":P:" flag
 do 
     case "${flag}" in
-        P) prefix-dir=${OPTARG};;
+        P) prefixdir=${OPTARG};;
     esac
 done
 
@@ -21,6 +21,6 @@ if [[ -z "$url" ]]; then
     exit 1
 else
     # Download file with optimisations for slow / unstable connections
-    wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 0 -P $prefix-dir $url
+    wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 0 -P $prefixdir $url
     exit 0
 fi
