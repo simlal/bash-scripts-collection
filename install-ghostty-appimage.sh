@@ -10,7 +10,7 @@ if [[ -z "$URL" ]]; then
 fi
 
 # Adjust endpoint
-APPIMAGE="$HOME/.local/bin/ghostty-latest.AppImage"
+APPIMAGE="$HOME/.local/bin/ghostty"
 
 # Download the latest nightly build
 echo "Downloading Ghostty Nightly from $URL..."
